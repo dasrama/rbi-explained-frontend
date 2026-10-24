@@ -1,0 +1,47 @@
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import { rbiApi } from "../api/rbiApi";
+import MacroPulseBanner from "../components/dashboard/MacroPulseBanner";
+import MacroHeroCards from "../components/dashboard/MacroHeroCards";
+import CorridorStatusBanner from "../components/dashboard/CorridorStatusBanner";
+import IndicatorIndex from "../components/dashboard/IndicatorIndex";
+import MacroEconomicsPrimer from "../components/dashboard/MacroEconomicsPrimer";
+
+export default function HomePage({ onOpenEmiCalculator }) {
+  const { data: indicatorsData, isLoading: loadingIndicators } = useQuery({
+    queryKey: ["indicators"],
+    queryFn: () => rbiApi.getIndicators({ page: 1, page_size: 50 }),
+  });
+
+  const { data: categoriesData, isLoading: loadingCategories } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => rbiApi.getCategories({ page: 1, page_size: 50 }),
+  });
+
+  const indicators = indicatorsData?.items || [];
+  const categories = categoriesData?.items || [];
+
+  return (
+    <div className="max-w-[1720px] mx-auto px-3 sm:px-6 py-6 space-y-6">
+      
+      {/* Hero Header & Quick Macro Pulse */}
+      <MacroPulseBanner />
+
+      {/* Top 4 Macro Ticker Cards */}
+      <MacroHeroCards onOpenEmiCalculator={onOpenEmiCalculator} />
+
+      {/* Monetary Policy Corridor Real-Time Status */}
+      <CorridorStatusBanner />
+
+      {/* Macroeconomic Indicator Index (Catalog, Search & Filters) */}
+      <IndicatorIndex
+        indicators={indicators}
+        categories={categories}
+      />
+
+      {/* Monetary Economics Primer & Parliamentary Transparency */}
+      <MacroEconomicsPrimer />
+
+    </div>
+  );
+}
