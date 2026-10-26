@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
-import SovereignTicker from "./components/layout/SovereignTicker";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import HomePage from "./pages/HomePage";
 import IndicatorDetailPage from "./pages/IndicatorDetailPage";
 import TransparencyPage from "./pages/TransparencyPage";
 import EmiCalculatorModal from "./components/modals/EmiCalculatorModal";
-import { rbiApi } from "./api/rbiApi";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,33 +22,15 @@ const queryClient = new QueryClient({
 function AppContent() {
   const { darkMode, setDarkMode } = useTheme();
   const [showEmiCalculator, setShowEmiCalculator] = useState(false);
-  const [isRefreshing, setIsRefreshing] = useState(false);
-
-  const handleTriggerQuickRefresh = async () => {
-    setIsRefreshing(true);
-    try {
-      await rbiApi.triggerSelenium("all");
-      queryClient.invalidateQueries();
-      alert("✓ Economic data series refreshed successfully!");
-    } catch {
-      alert("Economic data series updated.");
-    } finally {
-      setIsRefreshing(false);
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-[#dfe2f1] transition-colors duration-200">
       
-      {/* Top Marquee Sovereign Ticker */}
-      <SovereignTicker />
-
-      {/* Sticky Navigation Bar */}
+      {/* Revamped Sticky Navigation Bar */}
       <Navbar
-        onTriggerRefresh={handleTriggerQuickRefresh}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
-        isRefreshing={isRefreshing}
+        onOpenEmiCalculator={() => setShowEmiCalculator(true)}
       />
 
       {/* Main View Area */}

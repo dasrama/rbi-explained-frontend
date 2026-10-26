@@ -22,7 +22,7 @@ export default function HomePage({ onOpenEmiCalculator }) {
   const categories = categoriesData?.items || [];
 
   return (
-    <div className="max-w-[1720px] mx-auto px-3 sm:px-6 py-6 space-y-6">
+    <div className="max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
       
       {/* Hero Header & Quick Macro Pulse */}
       <MacroPulseBanner />
@@ -39,7 +39,7 @@ export default function HomePage({ onOpenEmiCalculator }) {
         categories={categories}
       />
 
-      {/* Monetary Economics Primer & Parliamentary Transparency */}
+      {/* Monetary Economics Primer & Statutory Corridors */}
       <MacroEconomicsPrimer />
 
     </div>

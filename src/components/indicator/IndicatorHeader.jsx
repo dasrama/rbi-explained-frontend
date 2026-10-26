@@ -73,7 +73,7 @@ export default function IndicatorHeader({ indicator, onOpenJsonFeed, onCiteSerie
         <div className="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-3 shrink-0">
           
           <div className="flex items-center gap-2 font-mono text-xs">
-            <span className="text-slate-600 dark:text-slate-400 font-medium">SOVEREIGN MANDATE STATUS:</span>
+            <span className="text-slate-600 dark:text-slate-400 font-medium">POLICY CORRIDOR STATUS:</span>
             <span className="px-3 py-1 bg-blue-100 dark:bg-blue-950/70 border border-blue-300 dark:border-blue-700 text-blue-900 dark:text-blue-300 font-bold text-xs">
               Corridor: Upper Quadrant
             </span>

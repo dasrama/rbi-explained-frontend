@@ -78,7 +78,7 @@ export default function IndicatorDetailPage() {
   }
 
   return (
-    <div className="max-w-[1720px] mx-auto px-3 sm:px-6 py-6 space-y-6">
+    <div className="max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
       
       {/* 1. Header & Sovereign Mandate Badges */}
       <IndicatorHeader

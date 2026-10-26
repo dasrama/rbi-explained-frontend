@@ -64,7 +64,7 @@ export default function PublishingDirectory({ sources = [] }) {
         {directory.map((item) => (
           <div
             key={item.code}
-            className="p-4 bg-slate-50 dark:bg-[#0a0e18] border border-slate-200 dark:border-[#1e293b] hover:border-blue-500 transition-colors flex flex-col justify-between shadow-sm"
+            className="glass-panel p-4 flex flex-col justify-between shadow-sm"
           >
             <div>
               <div className="flex items-center justify-between font-mono text-xs mb-2.5">

@@ -7,7 +7,7 @@ export default function IndicatorIntelligenceWidgets({ indicator }) {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
       
       {/* 1. MPC Repo Rate Stance Nexus */}
-      <div className="terminal-panel p-5 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-5 flex flex-col justify-between shadow-sm">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-blue-700 dark:text-blue-400 font-bold uppercase tracking-wider mb-2">
             <Landmark className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -35,7 +35,7 @@ export default function IndicatorIntelligenceWidgets({ indicator }) {
       </div>
 
       {/* 2. Wholesale Price Divergence */}
-      <div className="terminal-panel p-5 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-5 flex flex-col justify-between shadow-sm">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-emerald-800 dark:text-emerald-400 font-bold uppercase tracking-wider mb-2">
             <GitCompare className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
@@ -63,7 +63,7 @@ export default function IndicatorIntelligenceWidgets({ indicator }) {
       </div>
 
       {/* 3. External Sector Resilience */}
-      <div className="terminal-panel p-5 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-5 flex flex-col justify-between shadow-sm">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-amber-800 dark:text-amber-400 font-bold uppercase tracking-wider mb-2">
             <ShieldCheck className="w-4 h-4 text-amber-600 dark:text-amber-400" />

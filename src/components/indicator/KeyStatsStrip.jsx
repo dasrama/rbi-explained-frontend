@@ -15,7 +15,7 @@ export default function KeyStatsStrip({ indicator, onOpenRevision }) {
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-6">
       
       {/* 1. Current YoY Rate */}
-      <div className="terminal-panel p-4 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-4 flex flex-col justify-between shadow-sm">
         <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold">
           <span>CURRENT YOY RATE</span>
           <TrendingUp className="w-4 h-4 text-red-600 dark:text-red-400" />
@@ -43,7 +43,7 @@ export default function KeyStatsStrip({ indicator, onOpenRevision }) {
       </div>
 
       {/* 2. Current Index Level */}
-      <div className="terminal-panel p-4 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-4 flex flex-col justify-between shadow-sm">
         <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold">
           <span>CURRENT INDEX LEVEL</span>
           <Layers className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -64,7 +64,7 @@ export default function KeyStatsStrip({ indicator, onOpenRevision }) {
       </div>
 
       {/* 3. 52-Week Range */}
-      <div className="terminal-panel p-4 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-4 flex flex-col justify-between shadow-sm">
         <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold">
           <span>52-WEEK RANGE</span>
           <Sliders className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
@@ -90,7 +90,7 @@ export default function KeyStatsStrip({ indicator, onOpenRevision }) {
       </div>
 
       {/* 4. 1-Yr Moving Average */}
-      <div className="terminal-panel p-4 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] flex flex-col justify-between shadow-sm">
+      <div className="glass-panel p-4 flex flex-col justify-between shadow-sm">
         <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold">
           <span>1-YR MOVING AVERAGE</span>
           <BarChart3 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -111,7 +111,7 @@ export default function KeyStatsStrip({ indicator, onOpenRevision }) {
       {/* 5. Last Revised Series */}
       <div 
         onClick={onOpenRevision}
-        className="terminal-panel p-4 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] hover:border-blue-500 cursor-pointer transition-colors flex flex-col justify-between group shadow-sm"
+        className="glass-panel p-4 hover:border-blue-500 cursor-pointer transition-colors flex flex-col justify-between group shadow-sm"
       >
         <div className="flex items-center justify-between text-xs font-mono text-slate-600 dark:text-slate-400 font-semibold">
           <span>LAST REVISED SERIES</span>

@@ -5,33 +5,30 @@ export default function MacroPulseBanner() {
   return (
     <div className="space-y-4 mb-6">
       
-      {/* Top Sovereign Mandate Strip */}
-      <div className="terminal-panel p-5 sm:p-6 relative overflow-hidden bg-gradient-to-r from-blue-50/80 via-white to-slate-50 dark:from-[#0f172a] dark:via-[#111827] dark:to-[#0f172a] border border-slate-200 dark:border-[#334155]">
+      {/* Top Sovereign Mandate Strip & Headline */}
+      <div className="terminal-panel p-6 sm:p-7 relative overflow-hidden bg-gradient-to-r from-blue-50/70 via-white to-slate-50 dark:from-[#0f172a] dark:via-[#111827] dark:to-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-xs">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
           
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono bg-blue-100 dark:bg-blue-950/70 border border-blue-300 dark:border-blue-700/60 text-blue-800 dark:text-blue-300 font-semibold uppercase tracking-wider">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono bg-blue-100 dark:bg-blue-950/70 border border-blue-300 dark:border-blue-700/60 text-blue-800 dark:text-blue-300 font-bold uppercase tracking-wider">
                 <Shield className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                 SOVEREIGN STATISTICAL OBSERVATORY
               </span>
-              <span className="text-xs font-mono text-slate-600 dark:text-slate-400 font-medium">
-                RBI Act, 1934 Section 45ZB MPC Mandate
-              </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
               The Indian Macroeconomy, <span className="text-blue-600 dark:text-[#3b82f6]">Translated & Verified</span>
             </h1>
 
-            <p className="text-sm text-slate-700 dark:text-slate-300 max-w-3xl leading-relaxed font-sans">
+            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 max-w-3xl leading-relaxed font-sans">
               Official Reserve Bank of India statistics converted into plain-English economic intelligence, live benchmark corridors, and audit-verified time series.
             </p>
           </div>
 
           {/* Right Status Matrix */}
           <div className="flex sm:self-start lg:self-center items-center gap-3 shrink-0">
-            <div className="bg-white dark:bg-[#0b0f19] border border-slate-200 dark:border-[#334155] p-3 font-mono text-xs space-y-1 shadow-sm">
+            <div className="bg-white dark:bg-[#0b0f19] border border-slate-200 dark:border-[#334155] p-3.5 font-mono text-xs space-y-1 shadow-xs">
               <div className="text-slate-500 dark:text-slate-400 text-[11px] flex items-center justify-between gap-4 font-medium">
                 <span>MPC CYCLE</span>
                 <span className="text-slate-900 dark:text-white font-bold">FY2026-27 #4</span>
@@ -42,9 +39,9 @@ export default function MacroPulseBanner() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-[#0b0f19] border border-slate-200 dark:border-[#334155] p-3 font-mono text-xs space-y-1 shadow-sm">
+            <div className="bg-white dark:bg-[#0b0f19] border border-slate-200 dark:border-[#334155] p-3.5 font-mono text-xs space-y-1 shadow-xs">
               <div className="text-slate-500 dark:text-slate-400 text-[11px] flex items-center justify-between gap-4 font-medium">
-                <span>SHA-256 LEDGER STATE</span>
+                <span>SHA-256 LEDGER</span>
               </div>
               <div className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold">
                 <FileCheck className="w-4 h-4" />
