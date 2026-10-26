@@ -78,7 +78,7 @@ export default function KeyStatsStrip({ indicator, onOpenRevision }) {
           {/* Visual Slider Meter */}
           <div className="mt-2.5 w-full bg-slate-200 dark:bg-[#0b0f19] h-2 border border-slate-300 dark:border-[#334155] overflow-hidden relative">
             <div
-              className="bg-blue-600 dark:bg-[#3b82f6] h-full"
+              className="bg-blue-600 dark:bg-[#3B82F6 ] h-full"
               style={{ width: "84%" }}
             ></div>
           </div>

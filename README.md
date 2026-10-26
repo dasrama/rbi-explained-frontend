@@ -6,7 +6,7 @@
 
 ## 🏛️ Sovereign Macro Terminal Aesthetic
 Designed according to institutional financial terminal specifications:
-- **Palette:** Void Navy (`#0B0F19`), Slate Base (`#0F172A`), Active Surface (`#1E293B`), Structural Divider (`#334155`), Sovereign Blue (`#3B82F6`), Vibrant Emerald (`#10B981`), Ruby Red (`#EF4444`), Policy Amber (`#F59E0B`).
+- **Palette:** Void Navy (`#0B0F19`), Slate Base (`#0F172A`), Active Surface (`#1E293B`), Structural Divider (`#334155`), Sovereign Blue (`#3B82F6 `), Vibrant Emerald (`#10B981`), Ruby Red (`#EF4444`), Policy Amber (`#F59E0B`).
 - **Typography:**
   - **Space Grotesk:** Display headlines & metric titles.
   - **JetBrains Mono:** Tabular figures (`tnum`, `zero`), timestamps, basis point deltas, and terminal codes.

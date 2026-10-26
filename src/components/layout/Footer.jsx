@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 border border-blue-600 dark:border-[#3b82f6] bg-blue-50 dark:bg-[#0f172a] flex items-center justify-center text-blue-600 dark:text-[#3b82f6]">
+              <div className="w-6 h-6 border border-blue-600 dark:border-[#3B82F6 ] bg-blue-50 dark:bg-[#0f172a] flex items-center justify-center text-blue-600 dark:text-[#3B82F6 ]">
                 <ShieldCheck className="w-4 h-4" />
               </div>
               <span className="font-display font-bold text-slate-900 dark:text-white text-base tracking-wide">
@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom Legal bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500 dark:text-slate-400">
           <div>
-            © 2026 Reserve Bank of India Statistical Intelligence Observatory. Statutory Public Domain Disclosures Apply.
+            © 2026 RBI India Explained — An independent economic intelligence platform. Not affiliated with the Reserve Bank of India. Data sourced under Open Government Data License.
           </div>
           <div className="flex items-center gap-4">
             <span className="hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Methodology & Revisions</span>

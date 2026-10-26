@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { rbiApi } from "../api/rbiApi";
 import IndicatorHeader from "../components/indicator/IndicatorHeader";
@@ -14,7 +14,6 @@ import { Table, History } from "lucide-react";
 
 export default function IndicatorDetailPage() {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const activeSlug = slug || "cpi-combined-general";
 
   const [activeTab, setActiveTab] = useState("observations"); // 'observations' | 'revisions'
@@ -78,7 +77,7 @@ export default function IndicatorDetailPage() {
   }
 
   return (
-    <div className="max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
+    <div className="page-enter max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
       
       {/* 1. Header & Sovereign Mandate Badges */}
       <IndicatorHeader

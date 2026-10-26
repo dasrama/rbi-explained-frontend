@@ -25,7 +25,7 @@ export default {
           light: '#cbd5e1',
         },
         sovereign: {
-          blue: '#3b82f6',
+          blue: '#3B82F6 ',
           'blue-dark': '#1e40af',
           'blue-glow': '#60a5fa',
           emerald: '#10b981',

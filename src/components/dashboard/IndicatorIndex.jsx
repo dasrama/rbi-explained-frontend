@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Search, ArrowUpRight, Sparkles } from "lucide-react";
+import { Search, ArrowUpRight } from "lucide-react";
 import { formatIndianNumber, formatDate } from "../../utils/formatters";
 
 export default function IndicatorIndex({ indicators = [], categories = [] }) {
@@ -8,6 +8,20 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedFrequency, setSelectedFrequency] = useState("all");
   const [provisionalOnly, setProvisionalOnly] = useState(false);
+  const searchRef = useRef(null);
+
+  // Cmd+K / Ctrl+K to focus search
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        searchRef.current?.focus();
+        searchRef.current?.select();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Filtered indicators
   const filteredIndicators = useMemo(() => {
@@ -54,19 +68,24 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
           <input
+            ref={searchRef}
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search indicator (e.g. CPI, USD, repo...)"
-            className="w-full bg-slate-50 dark:bg-[#0b0f19] border border-slate-300 dark:border-[#334155] pl-9 pr-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus-terminal"
+            className="w-full bg-slate-50 dark:bg-[#0b0f19] border border-slate-300 dark:border-[#334155] pl-9 pr-16 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus-terminal"
           />
-          {searchQuery && (
+          {searchQuery ? (
             <button
               onClick={() => setSearchQuery("")}
               className="absolute right-2.5 top-2.5 text-xs font-mono text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
             >
               ✕
             </button>
+          ) : (
+            <span className="absolute right-2.5 top-2 text-[10px] font-mono text-slate-400 dark:text-slate-600 border border-slate-300 dark:border-slate-700 px-1 py-0.5 leading-none select-none">
+              ⌘K
+            </span>
           )}
         </div>
       </div>
@@ -246,18 +265,8 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
                 </div>
               </div>
 
-              {/* Back Face: Full Plain-English Meaning */}
               <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-slate-50/95 dark:bg-[#0c1427]/95 border-2 border-blue-500/60 shadow-xl">
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono mb-2.5 pb-2 border-b border-slate-200/80 dark:border-slate-800">
-                    <span className="flex items-center gap-1.5 text-blue-700 dark:text-blue-400 font-bold uppercase tracking-wider text-[11px]">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      Plain-English Meaning
-                    </span>
-                    <span className="text-[10px] font-mono text-slate-500 uppercase">
-                      {item.frequency}
-                    </span>
-                  </div>
 
                   <h4 className="font-display font-bold text-slate-900 dark:text-white text-base">
                     {item.name}

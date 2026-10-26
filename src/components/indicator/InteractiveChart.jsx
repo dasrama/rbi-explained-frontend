@@ -35,7 +35,7 @@ const CustomDot = (props) => {
     return (
       <g>
         <circle cx={cx} cy={cy} r={6} fill="#2563eb" stroke="#ffffff" strokeWidth={2} />
-        <rect x={cx - 10} y={cy - 24} width={20} height={16} fill="#1d4ed8" stroke="#3b82f6" strokeWidth={1} rx={2} />
+        <rect x={cx - 10} y={cy - 24} width={20} height={16} fill="#1d4ed8" stroke="#3B82F6 " strokeWidth={1} rx={2} />
         <text x={cx} y={cy - 12} fill="#ffffff" fontSize={10} fontWeight="bold" fontFamily="monospace" textAnchor="middle">
           R
         </text>
@@ -53,7 +53,7 @@ const CustomChartTooltip = ({ active, payload, label }) => {
   const data = payload[0].payload;
 
   return (
-    <div className="bg-white dark:bg-[#0b0f19] border-2 border-blue-600 dark:border-[#3b82f6] p-3.5 font-mono text-xs shadow-2xl min-w-[220px]">
+    <div className="bg-white dark:bg-[#0b0f19] border-2 border-blue-600 dark:border-[#3B82F6 ] p-3.5 font-mono text-xs shadow-2xl min-w-[220px]">
       <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#1e293b] pb-2 mb-2">
         <span className="text-slate-900 dark:text-slate-200 font-bold text-sm">{formatDate(data.date, "shortMonth")}</span>
         {data.is_provisional ? (

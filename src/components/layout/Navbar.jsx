@@ -91,12 +91,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
 
         {/* Right Utility Toolbar */}
         <div className="flex items-center gap-2 sm:gap-3">
-          
-          {/* Live Data Status Pulse (Desktop) */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-[#0f172a] border border-slate-200 dark:border-[#1e293b] font-mono text-xs">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span className="text-slate-700 dark:text-slate-300 font-semibold">Live Sovereign Data</span>
-          </div>
 
           {/* Home Loan EMI Calculator Trigger */}
           {onOpenEmiCalculator && (

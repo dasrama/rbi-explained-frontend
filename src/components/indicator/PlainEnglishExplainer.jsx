@@ -41,7 +41,7 @@ export default function PlainEnglishExplainer({ indicator }) {
   const driver = getDriver();
 
   return (
-    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#0a0e18] border border-slate-200 dark:border-[#334155] border-l-4 border-l-blue-600 dark:border-l-[#3b82f6] shadow-sm">
+    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#0a0e18] border border-slate-200 dark:border-[#334155] border-l-4 border-l-blue-600 dark:border-l-[#3B82F6 ] shadow-sm">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Left 2 Cols: Everyday Life Explanation */}

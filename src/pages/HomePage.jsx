@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { rbiApi } from "../api/rbiApi";
 import MacroPulseBanner from "../components/dashboard/MacroPulseBanner";
 import MacroHeroCards from "../components/dashboard/MacroHeroCards";
-import CorridorStatusBanner from "../components/dashboard/CorridorStatusBanner";
 import IndicatorIndex from "../components/dashboard/IndicatorIndex";
 import MacroEconomicsPrimer from "../components/dashboard/MacroEconomicsPrimer";
 
@@ -22,16 +21,13 @@ export default function HomePage({ onOpenEmiCalculator }) {
   const categories = categoriesData?.items || [];
 
   return (
-    <div className="max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
+    <div className="page-enter max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
       
       {/* Hero Header & Quick Macro Pulse */}
       <MacroPulseBanner />
 
       {/* Top 4 Macro Ticker Cards */}
       <MacroHeroCards onOpenEmiCalculator={onOpenEmiCalculator} />
-
-      {/* Monetary Policy Corridor Real-Time Status */}
-      <CorridorStatusBanner />
 
       {/* Macroeconomic Indicator Index (Catalog, Search & Filters) */}
       <IndicatorIndex

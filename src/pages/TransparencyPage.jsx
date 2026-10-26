@@ -15,7 +15,7 @@ export default function TransparencyPage() {
   const sources = sourcesData?.items || [];
 
   return (
-    <div className="max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
+    <div className="page-enter max-w-[1720px] mx-auto px-4 sm:px-6 pt-6 pb-12 sm:pt-8 sm:pb-16 space-y-6">
       
       {/* 1. Sovereign Provenance Header */}
       <TransparencyHeader />
