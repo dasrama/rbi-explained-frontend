@@ -3,31 +3,31 @@ import { ShieldCheck, ExternalLink, CheckCircle2 } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#070a12] border-t border-[#334155] text-slate-400 text-xs mt-16">
+    <footer className="w-full bg-slate-100 dark:bg-[#070a12] border-t border-slate-200 dark:border-[#334155] text-slate-600 dark:text-slate-400 text-xs mt-16 transition-colors">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-[#1e293b]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-200 dark:border-[#1e293b]">
           
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 border border-[#3b82f6] bg-[#0f172a] flex items-center justify-center text-[#3b82f6]">
+              <div className="w-6 h-6 border border-blue-600 dark:border-[#3b82f6] bg-blue-50 dark:bg-[#0f172a] flex items-center justify-center text-blue-600 dark:text-[#3b82f6]">
                 <ShieldCheck className="w-4 h-4" />
               </div>
-              <span className="font-display font-bold text-white text-sm tracking-wide">
+              <span className="font-display font-bold text-slate-900 dark:text-white text-base tracking-wide">
                 RBI INDIA EXPLAINED
               </span>
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed max-w-xl">
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl font-sans">
               Translating complex Reserve Bank of India monetary policy bulletins, statistical supplements, and systemic liquidity data into clean, transparent, and interpretable intelligence for citizens, academic researchers, and financial institutions.
             </p>
-            <div className="text-[11px] font-mono text-slate-500 pt-1">
+            <div className="text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
               Data sourced under Open Government Data License (OGDL India) and RBI Statutory Disclosure Mandates.
             </div>
           </div>
 
           {/* Sovereign Data Sources */}
           <div>
-            <h4 className="font-mono text-xs uppercase text-slate-200 tracking-wider mb-3">
+            <h4 className="font-mono text-xs uppercase text-slate-900 dark:text-slate-200 font-bold tracking-wider mb-3">
               SOVEREIGN DATA SOURCES
             </h4>
             <ul className="space-y-2 text-xs font-mono">
@@ -36,9 +36,9 @@ export default function Footer() {
                   href="https://dbie.rbi.org.in"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-blue-400 flex items-center gap-1.5 transition-colors"
+                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1.5 transition-colors"
                 >
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                   DBIE (Database on Indian Economy)
                 </a>
               </li>
@@ -47,9 +47,9 @@ export default function Footer() {
                   href="https://www.mospi.gov.in"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-blue-400 flex items-center gap-1.5 transition-colors"
+                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1.5 transition-colors"
                 >
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                   MOSPI National Statistical Office
                 </a>
               </li>
@@ -58,9 +58,9 @@ export default function Footer() {
                   href="https://www.npci.org.in"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-blue-400 flex items-center gap-1.5 transition-colors"
+                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1.5 transition-colors"
                 >
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                   NPCI Digital Payment Reports
                 </a>
               </li>
@@ -69,9 +69,9 @@ export default function Footer() {
                   href="https://www.fbil.org.in"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-blue-400 flex items-center gap-1.5 transition-colors"
+                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1.5 transition-colors"
                 >
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                   FBIL Reference Rates
                 </a>
               </li>
@@ -80,18 +80,18 @@ export default function Footer() {
 
           {/* Integrity & Ledger */}
           <div>
-            <h4 className="font-mono text-xs uppercase text-slate-200 tracking-wider mb-3">
+            <h4 className="font-mono text-xs uppercase text-slate-900 dark:text-slate-200 font-bold tracking-wider mb-3">
               DATA INTEGRITY & LEDGER
             </h4>
-            <div className="bg-[#0f172a] border border-[#334155] p-3 space-y-2 font-mono text-[11px]">
-              <div className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-                <CheckCircle2 className="w-3.5 h-3.5" />
+            <div className="bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] p-3.5 space-y-2 font-mono text-xs shadow-sm">
+              <div className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold">
+                <CheckCircle2 className="w-4 h-4" />
                 SHA-256 Ledger Certified
               </div>
-              <div className="text-slate-400 text-[10px] break-all font-mono">
+              <div className="text-slate-600 dark:text-slate-300 text-[11px] break-all font-mono font-medium">
                 9c7a8c385b41ce45d078174f4b2ffb3662d
               </div>
-              <div className="text-slate-500 text-[9px] uppercase tracking-wider">
+              <div className="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">
                 ZERO-TAMPER PIPELINE ACTIVE
               </div>
             </div>
@@ -100,16 +100,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500 dark:text-slate-400">
           <div>
             © 2026 Reserve Bank of India Statistical Intelligence Observatory. Statutory Public Domain Disclosures Apply.
           </div>
           <div className="flex items-center gap-4">
-            <span className="hover:text-slate-400 cursor-pointer">Methodology & Revisions</span>
+            <span className="hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Methodology & Revisions</span>
             <span>•</span>
-            <span className="hover:text-slate-400 cursor-pointer">Developer REST Specs</span>
+            <span className="hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Statutory Disclosures</span>
             <span>•</span>
-            <span className="hover:text-slate-400 cursor-pointer">Disclaimer of Liability</span>
+            <span className="hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Disclaimer of Liability</span>
           </div>
         </div>
       </div>

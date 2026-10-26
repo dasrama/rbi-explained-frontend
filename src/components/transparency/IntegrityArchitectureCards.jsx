@@ -1,93 +1,96 @@
 import React from "react";
-import { Fingerprint, GitFork, FileCode, CheckCircle2 } from "lucide-react";
+import { Fingerprint, GitFork, ShieldCheck } from "lucide-react";
 
 export default function IntegrityArchitectureCards() {
   return (
-    <div className="terminal-panel p-5 bg-[#0f172a] border border-[#334155] mb-8">
+    <div className="terminal-panel p-5 sm:p-6 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] mb-8 shadow-sm">
       
-      <div className="pb-4 border-b border-[#334155]">
-        <span className="text-[10px] font-mono text-blue-400 uppercase font-semibold">
+      <div className="pb-4 border-b border-slate-200 dark:border-[#334155]">
+        <span className="text-xs font-mono text-blue-700 dark:text-blue-400 uppercase font-bold">
           INTEGRITY ARCHITECTURE
         </span>
-        <h3 className="text-base font-display font-bold text-white tracking-wide">
+        <h3 className="text-base sm:text-lg font-display font-bold text-slate-900 dark:text-white tracking-wide">
           Data Deduplication & Revision Policy
         </h3>
-        <p className="text-xs text-slate-400 font-sans mt-0.5">
-          How our ingestion pipeline prevents synthetic duplicate records and respects official sovereign revisions.
+        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-sans mt-1">
+          How our statistical observatory prevents synthetic duplicate records and strictly respects official central bank revisions.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-5">
         
         {/* 01. Cryptographic Safeguards */}
-        <div className="p-4 bg-[#0a0e18] border border-[#1e293b] flex flex-col justify-between">
+        <div className="p-4 sm:p-5 bg-slate-50 dark:bg-[#0a0e18] border border-slate-200 dark:border-[#1e293b] flex flex-col justify-between shadow-sm">
           <div>
-            <div className="w-8 h-8 rounded-none border border-blue-500/50 bg-blue-950/40 text-blue-400 flex items-center justify-center mb-3">
-              <Fingerprint className="w-4 h-4 text-blue-400" />
+            <div className="w-9 h-9 rounded-none border border-blue-300 dark:border-blue-500/50 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 flex items-center justify-center mb-3.5">
+              <Fingerprint className="w-5 h-5 text-blue-700 dark:text-blue-400" />
             </div>
 
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+            <div className="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">
               01. CRYPTOGRAPHIC SAFEGUARDS
             </div>
-            <h4 className="text-sm font-display font-bold text-white mt-0.5">
+            <h4 className="text-sm font-display font-bold text-slate-900 dark:text-white mt-1">
               File-Level SHA Hashing
             </h4>
 
-            <p className="text-xs text-slate-300 font-sans mt-2 leading-relaxed">
-              Prevents duplicate ingestion when the Reserve Bank re-hosts identical spreadsheets. The ingestion crawler hashes the exact binary content via SHA-256 before parsing. If the hash matches, the file is dropped with zero-CPU overhead.
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans mt-2 leading-relaxed">
+              Prevents duplicate records when central agencies release updated or re-formatted bulletins. The platform calculates a SHA-256 cryptographic signature before ingestion; if identical to stored archives, duplicate processing is skipped.
             </p>
           </div>
 
-          <div className="mt-4 p-2 bg-[#070a12] border border-[#1e293b] font-mono text-[10px] text-emerald-400">
-            <code>download_file -&gt; sha256 -&gt; check_hash ? SKIP : PARSE</code>
+          <div className="mt-4 p-2.5 bg-emerald-50 dark:bg-[#070a12] border border-emerald-200 dark:border-emerald-900/60 font-mono text-xs text-emerald-800 dark:text-emerald-400 font-bold flex items-center justify-between">
+            <span>SHA-256 Ledger Signature</span>
+            <span className="text-emerald-700 dark:text-emerald-400">Verified Match</span>
           </div>
         </div>
 
         {/* 02. Sovereign Versioning */}
-        <div className="p-4 bg-[#0a0e18] border border-[#1e293b] flex flex-col justify-between">
+        <div className="p-4 sm:p-5 bg-slate-50 dark:bg-[#0a0e18] border border-slate-200 dark:border-[#1e293b] flex flex-col justify-between shadow-sm">
           <div>
-            <div className="w-8 h-8 rounded-none border border-emerald-500/50 bg-emerald-950/40 text-emerald-400 flex items-center justify-center mb-3">
-              <GitFork className="w-4 h-4 text-emerald-400" />
+            <div className="w-9 h-9 rounded-none border border-emerald-300 dark:border-emerald-500/50 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mb-3.5">
+              <GitFork className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />
             </div>
 
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+            <div className="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">
               02. SOVEREIGN VERSIONING
             </div>
-            <h4 className="text-sm font-display font-bold text-white mt-0.5">
+            <h4 className="text-sm font-display font-bold text-slate-900 dark:text-white mt-1">
               Superseded Record Archiving
             </h4>
 
-            <p className="text-xs text-slate-300 font-sans mt-2 leading-relaxed">
-              Central bank statistical publications frequently revise provisional figures (e.g. CPI from Provisional [P] to Final [F]). We never overwrite or delete rows; original numbers are marked SUPERSEDED with exact revision timestamps.
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans mt-2 leading-relaxed">
+              Central bank statistical publications frequently update provisional figures (e.g. CPI from Provisional [P] to Revised [R] and Finalized [F]). Numbers are never overwritten or erased; original estimates remain permanently preserved.
             </p>
           </div>
 
-          <div className="mt-4 p-2 bg-[#070a12] border border-[#1e293b] font-mono text-[10px] text-blue-400">
-            <code>UPDATE status='SUPERSEDED' -&gt; INSERT(revised)</code>
+          <div className="mt-4 p-2.5 bg-blue-50 dark:bg-[#070a12] border border-blue-200 dark:border-blue-900/60 font-mono text-xs text-blue-800 dark:text-blue-400 font-bold flex items-center justify-between">
+            <span>Statutory Lifecycle</span>
+            <span className="text-blue-700 dark:text-blue-300">Provisional → Revised → Final</span>
           </div>
         </div>
 
-        {/* 03. Open Verification */}
-        <div className="p-4 bg-[#0a0e18] border border-[#1e293b] flex flex-col justify-between">
+        {/* 03. Institutional Auditability */}
+        <div className="p-4 sm:p-5 bg-slate-50 dark:bg-[#0a0e18] border border-slate-200 dark:border-[#1e293b] flex flex-col justify-between shadow-sm">
           <div>
-            <div className="w-8 h-8 rounded-none border border-amber-500/50 bg-amber-950/40 text-amber-400 flex items-center justify-center mb-3">
-              <FileCode className="w-4 h-4 text-amber-400" />
+            <div className="w-9 h-9 rounded-none border border-amber-300 dark:border-amber-500/50 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-400 flex items-center justify-center mb-3.5">
+              <ShieldCheck className="w-5 h-5 text-amber-700 dark:text-amber-400" />
             </div>
 
-            <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
-              03. OPEN VERIFICATION
+            <div className="text-xs font-mono text-slate-600 dark:text-slate-400 uppercase tracking-wider font-bold">
+              03. INSTITUTIONAL AUDITABILITY
             </div>
-            <h4 className="text-sm font-display font-bold text-white mt-0.5">
-              Public Verification API
+            <h4 className="text-sm font-display font-bold text-slate-900 dark:text-white mt-1">
+              Public Gazette Cross-Verification
             </h4>
 
-            <p className="text-xs text-slate-300 font-sans mt-2 leading-relaxed">
-              Empowers economists and financial analysts to audit any individual indicator's revision history. Retrieve source documents, download raw timestamps, and compute point revisions via open REST routes.
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans mt-2 leading-relaxed">
+              Empowers economists, policy researchers, and journalists to audit any individual indicator's entire historical revision trail. Direct links connect to official central bank press communiqués and statutory Gazette notifications.
             </p>
           </div>
 
-          <div className="mt-4 p-2 bg-[#070a12] border border-[#1e293b] font-mono text-[10px] text-amber-400">
-            <code>GET /api/v1/indicators/{`{id}`}/revisions</code>
+          <div className="mt-4 p-2.5 bg-amber-50 dark:bg-[#070a12] border border-amber-200 dark:border-amber-900/60 font-mono text-xs text-amber-800 dark:text-amber-400 font-bold flex items-center justify-between">
+            <span>Public Provenance</span>
+            <span className="text-amber-700 dark:text-amber-400">Gazette Cross-Checked</span>
           </div>
         </div>
 

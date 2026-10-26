@@ -12,7 +12,7 @@ import IndicatorIntelligenceWidgets from "../components/indicator/IndicatorIntel
 import RevisionDetailModal from "../components/modals/RevisionDetailModal";
 import { Table, History } from "lucide-react";
 
-export default function IndicatorDetailPage({ onOpenApiDocs }) {
+export default function IndicatorDetailPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const activeSlug = slug || "cpi-combined-general";
@@ -70,8 +70,8 @@ export default function IndicatorDetailPage({ onOpenApiDocs }) {
 
   if (loadingIndicator && !indicator) {
     return (
-      <div className="max-w-[1720px] mx-auto px-4 py-16 text-center font-mono text-slate-400">
-        <div className="inline-block animate-spin w-8 h-8 border-2 border-blue-500 border-t-transparent mb-3"></div>
+      <div className="max-w-[1720px] mx-auto px-4 py-16 text-center font-mono text-slate-600 dark:text-slate-400">
+        <div className="inline-block animate-spin w-8 h-8 border-2 border-blue-600 border-t-transparent mb-3"></div>
         <div>Loading Sovereign Indicator Series Metadata...</div>
       </div>
     );
@@ -104,16 +104,16 @@ export default function IndicatorDetailPage({ onOpenApiDocs }) {
 
       {/* 5. Dual-Tab Switcher: Historical Observation Table vs. Revision Audit Trail */}
       <div className="space-y-4">
-        <div className="flex items-center space-x-2 font-mono text-xs border-b border-[#334155] pb-2">
+        <div className="flex items-center space-x-2 font-mono text-xs border-b border-slate-200 dark:border-[#334155] pb-2">
           <button
             onClick={() => setActiveTab("observations")}
             className={`px-4 py-2 border transition-colors flex items-center gap-2 ${
               activeTab === "observations"
-                ? "bg-[#3b82f6] text-white border-[#3b82f6] font-semibold"
-                : "bg-[#0f172a] text-slate-400 border-[#334155] hover:text-slate-200"
+                ? "bg-blue-600 text-white border-blue-600 font-bold shadow-sm"
+                : "bg-white dark:bg-[#0f172a] text-slate-700 dark:text-slate-400 border-slate-300 dark:border-[#334155] hover:bg-slate-100 dark:hover:bg-[#1e293b] hover:text-slate-900 dark:hover:text-slate-200 font-medium"
             }`}
           >
-            <Table className="w-3.5 h-3.5" />
+            <Table className="w-4 h-4" />
             <span>Historical Observation Table ({observations.length} Series)</span>
           </button>
 
@@ -121,13 +121,13 @@ export default function IndicatorDetailPage({ onOpenApiDocs }) {
             onClick={() => setActiveTab("revisions")}
             className={`px-4 py-2 border transition-colors flex items-center gap-2 ${
               activeTab === "revisions"
-                ? "bg-[#3b82f6] text-white border-[#3b82f6] font-semibold"
-                : "bg-[#0f172a] text-slate-400 border-[#334155] hover:text-slate-200"
+                ? "bg-blue-600 text-white border-blue-600 font-bold shadow-sm"
+                : "bg-white dark:bg-[#0f172a] text-slate-700 dark:text-slate-400 border-slate-300 dark:border-[#334155] hover:bg-slate-100 dark:hover:bg-[#1e293b] hover:text-slate-900 dark:hover:text-slate-200 font-medium"
             }`}
           >
-            <History className="w-3.5 h-3.5 text-blue-400" />
+            <History className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             <span>Central Bank Revision Audit Trail</span>
-            <span className="px-1.5 py-0.2 bg-amber-950 text-amber-300 border border-amber-800 text-[10px]">
+            <span className="px-2 py-0.5 bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-300 border border-amber-300 dark:border-amber-800 text-xs font-bold">
               {revisions.length} Logged Revisions
             </span>
           </button>
@@ -153,7 +153,6 @@ export default function IndicatorDetailPage({ onOpenApiDocs }) {
       {/* 6. Bottom 3 Intelligence Widgets */}
       <IndicatorIntelligenceWidgets
         indicator={indicator}
-        onOpenApiDocs={onOpenApiDocs}
       />
 
       {/* Revision Detail Modal */}

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import SovereignTicker from "./components/layout/SovereignTicker";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import HomePage from "./pages/HomePage";
 import IndicatorDetailPage from "./pages/IndicatorDetailPage";
 import TransparencyPage from "./pages/TransparencyPage";
-import ApiDocsModal from "./components/modals/ApiDocsModal";
 import EmiCalculatorModal from "./components/modals/EmiCalculatorModal";
 import { rbiApi } from "./api/rbiApi";
 
@@ -21,95 +21,85 @@ const queryClient = new QueryClient({
   },
 });
 
-export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
-  const [showApiDocs, setShowApiDocs] = useState(false);
+function AppContent() {
+  const { darkMode, setDarkMode } = useTheme();
   const [showEmiCalculator, setShowEmiCalculator] = useState(false);
-  const [isIngesting, setIsIngesting] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
-  // Sync dark class to html element
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    }
-  }, [darkMode]);
-
-  const handleTriggerQuickIngest = async () => {
-    setIsIngesting(true);
+  const handleTriggerQuickRefresh = async () => {
+    setIsRefreshing(true);
     try {
       await rbiApi.triggerSelenium("all");
       queryClient.invalidateQueries();
-      alert("✓ Sovereign ingestion crawler completed successfully! Updated series points and verified SHA-256 ledger checksum.");
+      alert("✓ Economic data series refreshed successfully!");
     } catch {
-      alert("Ingestion crawler triggered.");
+      alert("Economic data series updated.");
     } finally {
-      setIsIngesting(false);
+      setIsRefreshing(false);
     }
   };
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <div className={`min-h-screen flex flex-col font-sans ${darkMode ? "bg-[#0b0f19] text-[#dfe2f1]" : "bg-[#f8fafc] text-slate-800"}`}>
-          
-          {/* Top Marquee Sovereign Ticker */}
-          <SovereignTicker />
+    <div className="min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-[#dfe2f1] transition-colors duration-200">
+      
+      {/* Top Marquee Sovereign Ticker */}
+      <SovereignTicker />
 
-          {/* Sticky Navigation Bar */}
-          <Navbar
-            onOpenApiDocs={() => setShowApiDocs(true)}
-            onTriggerIngestion={handleTriggerQuickIngest}
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
-            isIngesting={isIngesting}
+      {/* Sticky Navigation Bar */}
+      <Navbar
+        onTriggerRefresh={handleTriggerQuickRefresh}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        isRefreshing={isRefreshing}
+      />
+
+      {/* Main View Area */}
+      <main className="flex-1">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                onOpenEmiCalculator={() => setShowEmiCalculator(true)}
+              />
+            }
           />
+          <Route
+            path="/indicators"
+            element={<Navigate to="/indicators/cpi-combined-general" replace />}
+          />
+          <Route
+            path="/indicators/:slug"
+            element={<IndicatorDetailPage />}
+          />
+          <Route
+            path="/transparency"
+            element={<TransparencyPage />}
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
 
-          {/* Main View Area */}
-          <main className="flex-1">
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <HomePage
-                    onOpenEmiCalculator={() => setShowEmiCalculator(true)}
-                  />
-                }
-              />
-              <Route
-                path="/indicators"
-                element={<Navigate to="/indicators/cpi-combined-general" replace />}
-              />
-              <Route
-                path="/indicators/:slug"
-                element={
-                  <IndicatorDetailPage
-                    onOpenApiDocs={() => setShowApiDocs(true)}
-                  />
-                }
-              />
-              <Route
-                path="/transparency"
-                element={<TransparencyPage />}
-              />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
+      {/* Institutional Sovereign Footer */}
+      <Footer />
 
-          {/* Institutional Sovereign Footer */}
-          <Footer />
+      {/* Home Loan EMI Calculator Modal */}
+      {showEmiCalculator && (
+        <EmiCalculatorModal onClose={() => setShowEmiCalculator(false)} />
+      )}
 
-          {/* Modals */}
-          {showApiDocs && <ApiDocsModal onClose={() => setShowApiDocs(false)} />}
-          {showEmiCalculator && (
-            <EmiCalculatorModal onClose={() => setShowEmiCalculator(false)} />
-          )}
+    </div>
+  );
+}
 
-        </div>
-      </BrowserRouter>
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <BrowserRouter>
+          <AppContent />
+        </BrowserRouter>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

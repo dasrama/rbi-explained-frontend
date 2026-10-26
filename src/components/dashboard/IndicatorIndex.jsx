@@ -1,14 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Search, 
-  ArrowUpRight, 
-  Calendar, 
-  CheckCircle2, 
-  AlertCircle,
-  Filter,
-  SlidersHorizontal
-} from "lucide-react";
+import { Search, ArrowUpRight } from "lucide-react";
 import { formatIndianNumber, formatDate } from "../../utils/formatters";
 
 export default function IndicatorIndex({ indicators = [], categories = [] }) {
@@ -45,15 +37,15 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
   }, [indicators, selectedCategory, selectedFrequency, provisionalOnly, searchQuery]);
 
   return (
-    <section className="terminal-panel p-5 mb-8 bg-[#0f172a]">
+    <section className="terminal-panel p-5 sm:p-6 mb-8 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-sm">
       
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 border-b border-[#334155]">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 border-b border-slate-200 dark:border-[#334155]">
         <div>
-          <h2 className="text-xl font-display font-bold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
             Macroeconomic Indicator Index
           </h2>
-          <p className="text-xs font-mono text-slate-400 mt-0.5">
+          <p className="text-xs font-mono text-slate-600 dark:text-slate-400 mt-1">
             Validated series directly synced with Database on Indian Economy (DBIE) and MOSPI releases.
           </p>
         </div>
@@ -66,12 +58,12 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search indicator (e.g. CPI, USD, repo...)"
-            className="w-full bg-[#0b0f19] border border-[#334155] pl-9 pr-3 py-1.5 text-xs font-mono text-slate-200 placeholder-slate-500 focus-terminal"
+            className="w-full bg-slate-50 dark:bg-[#0b0f19] border border-slate-300 dark:border-[#334155] pl-9 pr-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus-terminal"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
-              className="absolute right-2.5 top-2 text-xs font-mono text-slate-500 hover:text-slate-300"
+              className="absolute right-2.5 top-2.5 text-xs font-mono text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
             >
               ✕
             </button>
@@ -80,16 +72,16 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
       </div>
 
       {/* Filter Control Bar */}
-      <div className="pt-4 pb-5 flex flex-wrap items-center justify-between gap-3 border-b border-[#1e293b]">
+      <div className="pt-4 pb-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-[#1e293b]">
         
         {/* Category Tabs */}
         <div className="flex flex-wrap items-center gap-1.5 font-mono text-xs">
           <button
             onClick={() => setSelectedCategory("all")}
-            className={`px-3 py-1 border transition-colors ${
+            className={`px-3 py-1.5 border transition-colors ${
               selectedCategory === "all"
-                ? "bg-[#3b82f6] text-white border-[#3b82f6] font-semibold"
-                : "bg-[#0b0f19] text-slate-400 border-[#334155] hover:text-slate-200 hover:bg-[#1e293b]"
+                ? "bg-blue-600 text-white border-blue-600 font-bold shadow-sm"
+                : "bg-slate-50 dark:bg-[#0b0f19] text-slate-700 dark:text-slate-300 border-slate-300 dark:border-[#334155] hover:bg-slate-100 dark:hover:bg-[#1e293b]"
             }`}
           >
             All Indicators ({indicators.length})
@@ -101,10 +93,10 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(String(cat.id))}
-                className={`px-3 py-1 border transition-colors ${
+                className={`px-3 py-1.5 border transition-colors ${
                   selectedCategory === String(cat.id)
-                    ? "bg-[#3b82f6] text-white border-[#3b82f6] font-semibold"
-                    : "bg-[#0b0f19] text-slate-400 border-[#334155] hover:text-slate-200 hover:bg-[#1e293b]"
+                    ? "bg-blue-600 text-white border-blue-600 font-bold shadow-sm"
+                    : "bg-slate-50 dark:bg-[#0b0f19] text-slate-700 dark:text-slate-300 border-slate-300 dark:border-[#334155] hover:bg-slate-100 dark:hover:bg-[#1e293b]"
                 }`}
               >
                 {cat.name} ({count})
@@ -117,15 +109,15 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
         <div className="flex items-center gap-3 font-mono text-xs">
           
           {/* Frequency selector */}
-          <div className="flex items-center gap-1 bg-[#0b0f19] border border-[#334155] p-0.5">
+          <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#0b0f19] border border-slate-300 dark:border-[#334155] p-0.5">
             {["all", "MONTHLY", "DAILY", "WEEKLY"].map((freq) => (
               <button
                 key={freq}
                 onClick={() => setSelectedFrequency(freq)}
-                className={`px-2 py-0.5 text-[11px] uppercase transition-colors ${
+                className={`px-2.5 py-1 text-xs uppercase transition-colors font-medium ${
                   selectedFrequency === freq
-                    ? "bg-[#334155] text-white font-semibold"
-                    : "text-slate-400 hover:text-slate-200"
+                    ? "bg-white dark:bg-[#334155] text-slate-900 dark:text-white font-bold shadow-sm"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200"
                 }`}
               >
                 {freq === "all" ? "All Freq" : freq.toLowerCase()}
@@ -134,71 +126,71 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
           </div>
 
           {/* Provisional Checkbox */}
-          <label className="flex items-center gap-2 cursor-pointer bg-[#0b0f19] border border-[#334155] px-2.5 py-1 text-[11px] text-amber-300 select-none hover:bg-[#1e293b] transition-colors">
+          <label className="flex items-center gap-2 cursor-pointer bg-amber-50 dark:bg-[#0b0f19] border border-amber-300 dark:border-[#334155] px-3 py-1.5 text-xs text-amber-900 dark:text-amber-300 select-none hover:bg-amber-100 dark:hover:bg-[#1e293b] transition-colors">
             <input
               type="checkbox"
               checked={provisionalOnly}
               onChange={(e) => setProvisionalOnly(e.target.checked)}
-              className="accent-[#f59e0b] w-3.5 h-3.5"
+              className="accent-[#f59e0b] w-4 h-4 cursor-pointer"
             />
-            <span className="font-semibold">[P] Provisional Flagged Only</span>
+            <span className="font-bold">[P] Provisional Flagged Only</span>
           </label>
 
         </div>
       </div>
 
       {/* Grid of Indicator Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-6">
         {filteredIndicators.map((item) => (
           <div
             key={item.id}
-            className="terminal-panel p-4 bg-[#0a0e18] border border-[#334155] hover:border-[#3b82f6] flex flex-col justify-between group transition-all"
+            className="terminal-panel p-4 sm:p-5 bg-white dark:bg-[#0a0e18] border border-slate-200 dark:border-[#334155] hover:border-blue-500 flex flex-col justify-between group transition-all shadow-sm"
           >
             <div>
               {/* Header tags */}
-              <div className="flex items-center justify-between text-[10px] font-mono mb-2">
-                <span className="px-1.5 py-0.2 bg-[#0f172a] text-blue-400 border border-blue-900/60 font-semibold uppercase">
+              <div className="flex items-center justify-between text-xs font-mono mb-2.5">
+                <span className="px-2 py-0.5 bg-blue-50 dark:bg-[#0f172a] text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-900/60 font-bold uppercase text-[11px]">
                   {item.code}
                 </span>
 
                 <div className="flex items-center gap-1.5">
                   {item.is_provisional ? (
-                    <span className="px-1.5 py-0.2 bg-amber-950/80 text-amber-400 border border-amber-800 font-semibold">
+                    <span className="px-2 py-0.5 bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 border border-amber-300 dark:border-amber-800 font-bold text-[11px]">
                       PROVISIONAL [P]
                     </span>
                   ) : (
-                    <span className="px-1.5 py-0.2 bg-emerald-950/80 text-emerald-400 border border-emerald-800 font-semibold">
+                    <span className="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-950/80 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 font-bold text-[11px]">
                       FINAL VERIFIED
                     </span>
                   )}
-                  <span className="text-slate-500 uppercase">{item.frequency}</span>
+                  <span className="text-slate-500 dark:text-slate-400 uppercase text-xs">{item.frequency}</span>
                 </div>
               </div>
 
               {/* Title & Description */}
-              <h3 className="text-sm font-display font-semibold text-white group-hover:text-blue-400 transition-colors">
+              <h3 className="text-base font-display font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {item.name}
               </h3>
-              <p className="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed font-sans">
                 {item.description}
               </p>
 
               {/* Headline numbers */}
-              <div className="mt-4 flex items-baseline justify-between border-t border-[#1e293b] pt-3">
+              <div className="mt-4 flex items-baseline justify-between border-t border-slate-200 dark:border-[#1e293b] pt-3">
                 <div>
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-2xl font-display font-bold text-white tracking-tight">
+                    <span className="text-2xl sm:text-3xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
                       {item.code === "USD_INR_REF_RATE" ? `₹${item.latest_value}` : 
                        item.code === "FOREX_RESERVES_USD" ? `$${item.latest_value}B` :
                        item.code === "NET_LIQUIDITY_LAF" ? `₹${formatIndianNumber(item.latest_value, 0)} Cr` :
                        item.latest_value}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-400">
+                    <span className="text-xs font-mono text-slate-600 dark:text-slate-400 font-medium">
                       {item.code === "CPI_COMBINED_GENERAL" || item.code === "WPI_ALL_COMMODITIES" ? "YoY Headline" : 
                        item.units}
                     </span>
                   </div>
-                  <div className="text-[10px] font-mono text-slate-500 mt-0.5">
+                  <div className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
                     Observation: {formatDate(item.latest_observation_date, "shortMonth")}
                   </div>
                 </div>
@@ -206,12 +198,12 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
                 {/* Trajectory pill */}
                 {item.yoy_change !== undefined && (
                   <div className="text-right">
-                    <span className={`text-xs font-mono font-semibold ${
-                      item.yoy_change > 0 ? "text-emerald-400" : "text-slate-300"
+                    <span className={`text-xs font-mono font-bold ${
+                      item.yoy_change > 0 ? "text-emerald-700 dark:text-emerald-400" : "text-slate-700 dark:text-slate-300"
                     }`}>
                       {item.yoy_change > 0 ? `+${item.yoy_change}%` : `${item.yoy_change}%`}
                     </span>
-                    <div className="text-[9px] font-mono text-slate-500 uppercase">YoY Delta</div>
+                    <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase font-semibold">YoY Delta</div>
                   </div>
                 )}
               </div>
@@ -226,36 +218,36 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
                         : "M 0 24 Q 50 28, 100 16 T 150 12 T 200 6"
                     }
                     stroke={
-                      item.code === "CPI_COMBINED_GENERAL" ? "#ef4444" :
-                      item.code === "USD_INR_REF_RATE" ? "#3b82f6" :
-                      item.code === "FOREX_RESERVES_USD" ? "#f59e0b" :
-                      "#10b981"
+                      item.code === "CPI_COMBINED_GENERAL" ? "#dc2626" :
+                      item.code === "USD_INR_REF_RATE" ? "#2563eb" :
+                      item.code === "FOREX_RESERVES_USD" ? "#d97706" :
+                      "#059669"
                     }
-                    strokeWidth="2"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                   />
                 </svg>
               </div>
 
               {/* Plain-English Takeaway */}
-              <div className="mt-2 p-2 bg-[#0b0f19] border border-[#1e293b] text-[11px] text-slate-300 leading-snug">
-                <span className="font-semibold text-blue-400 font-mono">Plain-English: </span>
+              <div className="mt-2.5 p-2.5 bg-slate-50 dark:bg-[#0b0f19] border border-slate-200 dark:border-[#1e293b] text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-sans">
+                <strong className="font-semibold text-blue-700 dark:text-blue-400 font-mono">Plain-English: </strong>
                 {item.plain_english}
               </div>
             </div>
 
             {/* Bottom Card Action */}
-            <div className="mt-4 pt-3 border-t border-[#1e293b] flex items-center justify-between">
-              <span className="text-[10px] font-mono text-slate-500">
+            <div className="mt-4 pt-3 border-t border-slate-200 dark:border-[#1e293b] flex items-center justify-between">
+              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
                 {item.tolerance_corridor ? "Statutory 2%–6% Band" : "RBI Statistical Series"}
               </span>
 
               <Link
                 to={`/indicators/${item.slug}`}
-                className="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1 group-hover:underline"
+                className="text-xs font-mono font-bold text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 flex items-center gap-1 group-hover:underline"
               >
                 <span>Explore Chart & Ledger</span>
-                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
           </div>
@@ -263,7 +255,7 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
       </div>
 
       {filteredIndicators.length === 0 && (
-        <div className="py-12 text-center font-mono text-slate-400 text-xs">
+        <div className="py-12 text-center font-mono text-slate-600 dark:text-slate-400 text-xs">
           No economic indicators matched your current filter or search criteria.
         </div>
       )}
