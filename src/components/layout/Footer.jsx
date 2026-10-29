@@ -14,11 +14,11 @@ export default function Footer() {
                 <Landmark className="w-4 h-4 text-white" />
               </div>
               <span className="font-display font-bold text-slate-900 dark:text-white text-base tracking-wide">
-                RBI INDIA EXPLAINED
+                INDIAN ECONOMY DECODED
               </span>
             </div>
             <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl font-sans">
-              Translating complex Reserve Bank of India monetary policy bulletins, statistical supplements, and systemic liquidity data into clean, transparent, and interpretable intelligence for citizens, academic researchers, and financial institutions.
+              Translating RBI monetary policy data and macroeconomic indicators into clear, accessible intelligence.
             </p>
             <div className="text-xs font-mono text-slate-500 dark:text-slate-400 pt-1">
               Data sourced under Open Government Data License (OGDL India) and RBI Statutory Disclosure Mandates.
@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Sovereign Data Sources */}
           <div>
             <h4 className="font-mono text-xs uppercase text-slate-900 dark:text-slate-200 font-bold tracking-wider mb-3">
-              SOVEREIGN DATA SOURCES
+              DATA SOURCES
             </h4>
             <ul className="space-y-2 text-xs font-mono">
               <li>
@@ -78,31 +78,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Integrity & Ledger */}
-          <div>
-            <h4 className="font-mono text-xs uppercase text-slate-900 dark:text-slate-200 font-bold tracking-wider mb-3">
-              DATA INTEGRITY & LEDGER
-            </h4>
-            <div className="bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] p-3.5 space-y-2 font-mono text-xs shadow-sm">
-              <div className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold">
-                <CheckCircle2 className="w-4 h-4" />
-                SHA-256 Ledger Certified
-              </div>
-              <div className="text-slate-600 dark:text-slate-300 text-[11px] break-all font-mono font-medium">
-                9c7a8c385b41ce45d078174f4b2ffb3662d
-              </div>
-              <div className="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider">
-                ZERO-TAMPER PIPELINE ACTIVE
-              </div>
-            </div>
-          </div>
-
         </div>
 
         {/* Bottom Legal bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500 dark:text-slate-400">
           <div>
-            © 2026 RBI India Explained — An independent economic intelligence platform. Not affiliated with the Reserve Bank of India. Data sourced under Open Government Data License.
+            © 2026 Indian Economy Decoded — An independent economic intelligence platform. Not affiliated with the Reserve Bank of India. Data sourced under Open Government Data License.
           </div>
           <div className="flex items-center gap-4">
             <span className="hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Methodology & Revisions</span>

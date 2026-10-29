@@ -19,7 +19,7 @@ const FLOATER_HEADLINES = [
   { label: "UPI Monthly Volume", value: "15,042M Txns", meta: "₹20.64L Cr", path: "/indicators/upi-transaction-volume", color: "text-emerald-700 dark:text-emerald-400" },
   { label: "Forex Reserves", value: "$704.88B", meta: "All-Time High", path: "/indicators/forex-reserves", color: "text-amber-700 dark:text-amber-400" },
   { label: "WPI Inflation", value: "1.84%", meta: "Producer Costs Modest", path: "/indicators/wholesale-price-index", color: "text-emerald-700 dark:text-emerald-400" },
-  { label: "WACR Call Rate", value: "6.43%", meta: "Target 6.50%", path: "/indicators/policy-repo-rate", color: "text-slate-700 dark:text-slate-300" },
+  { label: "WACR Call Rate", value: "6.43%", meta: "Target 6.50%", path: "/indicators/policy-repo-rate", color: "text-slate-900 dark:text-white" },
   { label: "Bank Credit", value: "+13.8% YoY", meta: "Retail / Services", path: "/", color: "text-blue-700 dark:text-blue-400" },
 ];
 
@@ -52,16 +52,11 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
               <Landmark className="w-5 h-5 text-white" />
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="font-display font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  RBI INDIA EXPLAINED
+              <span className="font-display font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  INDIAN ECONOMY DECODED
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-mono bg-blue-100 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-800 font-bold uppercase tracking-wider hidden sm:inline-block">
-                  CENTRAL BANK OBSERVATORY
-                </span>
-              </div>
               <span className="text-[11px] text-slate-500 dark:text-slate-400 font-mono tracking-tight hidden md:inline">
-                Reserve Bank of India • Macroeconomic Intelligence & Policy Transparency
+                Macroeconomic Data Dashboard
               </span>
             </div>
           </Link>
@@ -134,8 +129,7 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
       <div className="w-full bg-slate-100 dark:bg-[#070a12] border-t border-slate-200 dark:border-[#1e293b] text-xs font-mono h-8 flex items-center select-none overflow-hidden relative">
         {/* Left Anchor Label with solid background to prevent overlap */}
         <div className="flex items-center gap-2 shrink-0 px-3 sm:px-4 h-full bg-slate-200/90 dark:bg-[#0d1322] border-r border-slate-300 dark:border-[#1e293b] z-20 shadow-xs">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-          <span className="font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider text-[11px] whitespace-nowrap">
+          <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-[11px] whitespace-nowrap">
             MACRO HEADLINES
           </span>
         </div>
@@ -153,16 +147,16 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
                 to={item.path}
                 className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity group cursor-pointer"
               >
-                <span className="text-slate-600 dark:text-slate-400 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                <span className="text-slate-900 dark:text-white font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   {item.label}:
                 </span>
                 <span className={`font-bold ${item.color}`}>
                   {item.value}
                 </span>
-                <span className="text-slate-500 dark:text-slate-400 text-[11px]">
+                <span className="text-slate-600 dark:text-white/80 text-[11px]">
                   ({item.meta})
                 </span>
-                <span className="text-slate-400 dark:text-slate-600 font-bold ml-3">
+                <span className="text-slate-400 dark:text-slate-500 font-bold ml-3">
                   |
                 </span>
               </Link>
@@ -198,14 +192,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
               );
             })}
           </nav>
-
-          <div className="pt-2 border-t border-slate-200 dark:border-[#1e293b] flex items-center justify-between text-xs font-mono text-slate-500">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              Live Central Bank Verified
-            </span>
-            <span>IST 15:30</span>
-          </div>
         </div>
       )}
 

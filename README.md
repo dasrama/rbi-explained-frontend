@@ -1,4 +1,4 @@
-# RBI India Explained (Sovereign Macroeconomic Dashboard)
+# Indian Economy Decoded (Sovereign Macroeconomic Dashboard)
 
 > A modern, responsive, production-ready financial data terminal for the **Reserve Bank of India (RBI) Economic Indicators**. Converts dry central bank statistical bulletins into interactive visual corridors, key metrics, plain-English explanations, and cryptographic revision audit trails.
 
