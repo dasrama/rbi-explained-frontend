@@ -3,7 +3,7 @@ import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export default function TransparencyHeader() {
   return (
-    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-sm">
+    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] shadow-sm">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
         
         <div className="space-y-2">

@@ -107,7 +107,7 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
           {/* Theme Mode Switcher */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 bg-slate-100 hover:bg-slate-200 dark:bg-[#0f172a] dark:hover:bg-[#1e293b] border border-slate-300 dark:border-[#334155] text-slate-700 dark:text-slate-300 transition-colors shadow-xs"
+            className="p-2 bg-slate-100 hover:bg-slate-200 dark:bg-[#000000] dark:hover:bg-[#1e293b] border border-slate-300 dark:border-[#1e293b] text-slate-700 dark:text-slate-300 transition-colors shadow-xs"
             title={darkMode ? "Switch to Clean Light Mode" : "Switch to High-Contrast Dark Mode"}
             aria-label="Toggle display theme"
           >
@@ -121,7 +121,7 @@ export default function Navbar({ darkMode, setDarkMode, onOpenEmiCalculator }) {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 bg-slate-100 hover:bg-slate-200 dark:bg-[#0f172a] dark:hover:bg-[#1e293b] border border-slate-300 dark:border-[#334155] text-slate-700 dark:text-slate-300"
+            className="lg:hidden p-2 bg-slate-100 hover:bg-slate-200 dark:bg-[#000000] dark:hover:bg-[#1e293b] border border-slate-300 dark:border-[#1e293b] text-slate-700 dark:text-slate-300"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}

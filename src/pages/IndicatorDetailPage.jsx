@@ -109,7 +109,7 @@ export default function IndicatorDetailPage() {
             className={`px-4 py-2 border transition-colors flex items-center gap-2 ${
               activeTab === "observations"
                 ? "bg-blue-600 text-white border-blue-600 font-bold shadow-sm"
-                : "bg-white dark:bg-[#0f172a] text-slate-700 dark:text-slate-400 border-slate-300 dark:border-[#334155] hover:bg-slate-100 dark:hover:bg-[#1e293b] hover:text-slate-900 dark:hover:text-slate-200 font-medium"
+                : "bg-white dark:bg-[#000000] text-slate-700 dark:text-slate-400 border-slate-300 dark:border-[#1e293b] hover:bg-slate-100 dark:hover:bg-[#1e293b] hover:text-slate-900 dark:hover:text-slate-200 font-medium"
             }`}
           >
             <Table className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function IndicatorDetailPage() {
             className={`px-4 py-2 border transition-colors flex items-center gap-2 ${
               activeTab === "revisions"
                 ? "bg-blue-600 text-white border-blue-600 font-bold shadow-sm"
-                : "bg-white dark:bg-[#0f172a] text-slate-700 dark:text-slate-400 border-slate-300 dark:border-[#334155] hover:bg-slate-100 dark:hover:bg-[#1e293b] hover:text-slate-900 dark:hover:text-slate-200 font-medium"
+                : "bg-white dark:bg-[#000000] text-slate-700 dark:text-slate-400 border-slate-300 dark:border-[#1e293b] hover:bg-slate-100 dark:hover:bg-[#1e293b] hover:text-slate-900 dark:hover:text-slate-200 font-medium"
             }`}
           >
             <History className="w-4 h-4 text-blue-600 dark:text-blue-400" />

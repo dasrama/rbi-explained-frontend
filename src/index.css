@@ -5,11 +5,11 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --canvas-bg: #0b0f19;
-    --panel-bg: #0f172a;
-    --inset-bg: #070a12;
-    --border-main: #334155;
-    --border-subtle: #1e293b;
+    --canvas-bg: #070a12;
+    --panel-bg: #000000;
+    --inset-bg: #03050a;
+    --border-main: #1e293b;
+    --border-subtle: #0f172a;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
@@ -63,33 +63,39 @@
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* Transparent Sovereign Glass Panels */
-.glass-panel {
-  background-color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(203, 213, 225, 0.9);
+.dark .terminal-panel {
+  background-color: #000000;
+  border-color: #1e293b;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Sovereign Solid Card Panels (Deep Black) */
+.glass-panel,
+.card-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 0px;
-  box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.06), 0 1px 3px -1px rgba(0,0,0,0.04);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.dark .glass-panel {
-  background-color: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.35);
+.dark .glass-panel,
+.dark .card-panel {
+  background-color: #000000;
+  border: 1px solid #1e293b;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
 }
 
-.glass-panel:hover {
-  border-color: rgba(59, 130, 246, 0.55);
-  box-shadow: 0 10px 30px -4px rgba(59, 130, 246, 0.15), 0 2px 8px -2px rgba(0,0,0,0.06);
+.glass-panel:hover,
+.card-panel:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
 }
 
-.dark .glass-panel:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 10px 30px -4px rgba(59, 130, 246, 0.2);
+.dark .glass-panel:hover,
+.dark .card-panel:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 16px -2px rgba(59, 130, 246, 0.25);
 }
 
 /* ── Page Fade-in Transition ─────────────────────────────── */

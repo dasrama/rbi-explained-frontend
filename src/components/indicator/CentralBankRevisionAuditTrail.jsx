@@ -4,7 +4,7 @@ import { formatDate, truncateHash } from "../../utils/formatters";
 
 export default function CentralBankRevisionAuditTrail({ revisions = [], onSelectRevision }) {
   return (
-    <div className="terminal-panel p-5 sm:p-6 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-sm">
+    <div className="terminal-panel p-5 sm:p-6 bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] shadow-sm">
       
       {/* Header Info */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-[#334155]">

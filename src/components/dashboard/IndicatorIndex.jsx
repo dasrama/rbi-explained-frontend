@@ -51,7 +51,7 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
   }, [indicators, selectedCategory, selectedFrequency, provisionalOnly, searchQuery]);
 
   return (
-    <section className="terminal-panel p-5 sm:p-6 mb-8 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-sm">
+    <section className="terminal-panel p-5 sm:p-6 mb-8 bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] shadow-sm">
       
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 border-b border-slate-200 dark:border-[#334155]">
@@ -172,7 +172,7 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
                 <div>
                   {/* Header tags */}
                   <div className="flex items-center justify-between text-xs font-mono mb-2.5">
-                    <span className="px-2 py-0.5 bg-blue-50/80 dark:bg-[#0f172a] text-blue-700 dark:text-blue-400 border border-blue-200/80 dark:border-blue-900/60 font-bold uppercase text-[11px]">
+                    <span className="px-2 py-0.5 bg-blue-50/80 dark:bg-[#000000] text-blue-700 dark:text-blue-400 border border-blue-200/80 dark:border-blue-900/60 font-bold uppercase text-[11px]">
                       {item.code}
                     </span>
 
@@ -265,7 +265,7 @@ export default function IndicatorIndex({ indicators = [], categories = [] }) {
                 </div>
               </div>
 
-              <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-slate-50/95 dark:bg-[#0c1427]/95 border-2 border-blue-500/60 shadow-xl">
+              <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-white dark:bg-[#000000] border border-blue-500 shadow-md">
                 <div>
 
                   <h4 className="font-display font-bold text-slate-900 dark:text-white text-base">

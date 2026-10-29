@@ -124,7 +124,7 @@ export default function MacroHeroCards({ onOpenEmiCalculator }) {
         </div>
 
         {/* Back Face */}
-        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-slate-50/97 dark:bg-[#0c1427]/97 border-2 border-blue-500/60 shadow-xl">
+        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-white dark:bg-[#000000] border border-blue-500 shadow-md">
           <div>
             <h4 className="font-display font-bold text-slate-900 dark:text-white text-base">
               Retail Inflation (CPI Headline)
@@ -201,7 +201,7 @@ export default function MacroHeroCards({ onOpenEmiCalculator }) {
         </div>
 
         {/* Back Face */}
-        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-slate-50/97 dark:bg-[#0c1427]/97 border-2 border-blue-500/60 shadow-xl">
+        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-white dark:bg-[#000000] border border-blue-500 shadow-md">
           <div>
             <h4 className="font-display font-bold text-slate-900 dark:text-white text-base">
               USD / INR Reference Spot
@@ -279,7 +279,7 @@ export default function MacroHeroCards({ onOpenEmiCalculator }) {
         </div>
 
         {/* Back Face */}
-        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-slate-50/97 dark:bg-[#0c1427]/97 border-2 border-blue-500/60 shadow-xl">
+        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-white dark:bg-[#000000] border border-blue-500 shadow-md">
           <div>
             <h4 className="font-display font-bold text-slate-900 dark:text-white text-base">
               Monetary Policy Repo Rate
@@ -362,7 +362,7 @@ export default function MacroHeroCards({ onOpenEmiCalculator }) {
         </div>
 
         {/* Back Face */}
-        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-slate-50/97 dark:bg-[#0c1427]/97 border-2 border-blue-500/60 shadow-xl">
+        <div className="flip-card-back glass-panel p-5 flex flex-col justify-between h-full bg-white dark:bg-[#000000] border border-blue-500 shadow-md">
           <div>
             <h4 className="font-display font-bold text-slate-900 dark:text-white text-base">
               UPI Gross Settlement Volume

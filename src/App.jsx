@@ -24,7 +24,7 @@ function AppContent() {
   const [showEmiCalculator, setShowEmiCalculator] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-[#dfe2f1] transition-colors duration-200">
+    <div className="min-h-screen flex flex-col font-sans bg-slate-50 dark:bg-[#070a12] text-slate-900 dark:text-[#dfe2f1] transition-colors duration-200">
       
       {/* Revamped Sticky Navigation Bar */}
       <Navbar

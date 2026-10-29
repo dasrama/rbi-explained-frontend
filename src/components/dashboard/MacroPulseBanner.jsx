@@ -6,7 +6,7 @@ export default function MacroPulseBanner() {
     <div className="space-y-4 mb-6">
       
       {/* Hero Section with animated mesh gradient */}
-      <div className="terminal-panel relative overflow-hidden border border-slate-200 dark:border-[#334155] shadow-sm">
+      <div className="terminal-panel relative overflow-hidden border border-slate-200 dark:border-[#1e293b] bg-white dark:bg-[#000000] shadow-sm">
         
         {/* Animated mesh gradient overlay */}
         <div className="absolute inset-0 hero-mesh pointer-events-none" />
@@ -47,7 +47,7 @@ export default function MacroPulseBanner() {
 
             {/* Right Status Matrix */}
             <div className="flex sm:self-start lg:self-center items-center gap-3 shrink-0">
-              <div className="bg-white/90 dark:bg-[#0b0f19]/90 border border-slate-200 dark:border-[#334155] p-3.5 font-mono text-xs space-y-1 shadow-sm backdrop-blur-sm">
+              <div className="bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] p-3.5 font-mono text-xs space-y-1 shadow-xs">
                 <div className="text-slate-500 dark:text-slate-400 text-[11px] flex items-center justify-between gap-4 font-medium">
                   <span>MPC CYCLE</span>
                   <span className="text-slate-900 dark:text-white font-bold">FY2026-27 #4</span>
@@ -58,7 +58,7 @@ export default function MacroPulseBanner() {
                 </div>
               </div>
 
-              <div className="bg-white/90 dark:bg-[#0b0f19]/90 border border-slate-200 dark:border-[#334155] p-3.5 font-mono text-xs space-y-1 shadow-sm backdrop-blur-sm">
+              <div className="bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] p-3.5 font-mono text-xs space-y-1 shadow-xs">
                 <div className="text-slate-500 dark:text-slate-400 text-[11px] font-medium">
                   SHA-256 LEDGER
                 </div>
@@ -75,7 +75,7 @@ export default function MacroPulseBanner() {
       </div>
 
       {/* Flash Briefing Bar — compact, scannable */}
-      <div className="terminal-panel p-4 sm:p-5 bg-white dark:bg-[#0a0e18] border border-slate-200 dark:border-[#334155] border-l-4 border-l-blue-600 dark:border-l-[#3B82F6 ] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+      <div className="terminal-panel p-4 sm:p-5 bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] border-l-4 border-l-blue-600 dark:border-l-[#3B82F6 ] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
         <div className="flex items-start gap-3.5">
           <div className="p-2.5 bg-blue-100 dark:bg-blue-950/60 border border-blue-300 dark:border-blue-800/80 shrink-0 mt-0.5">
             <Zap className="w-4 h-4 text-blue-600 dark:text-blue-400 animate-pulse" />

@@ -15,7 +15,7 @@ export default function RevisionDetailModal({ revision, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-      <div className="w-full max-w-xl bg-white dark:bg-[#0f172a] border-2 border-blue-600 dark:border-[#3B82F6 ] shadow-2xl relative font-mono text-xs">
+      <div className="w-full max-w-xl bg-white dark:bg-[#000000] border-2 border-blue-600 dark:border-[#3B82F6 ] shadow-2xl relative font-mono text-xs">
         
         {/* Modal Header */}
         <div className="flex items-center justify-between px-5 py-3.5 bg-slate-100 dark:bg-[#0b0f19] border-b border-slate-200 dark:border-[#334155]">

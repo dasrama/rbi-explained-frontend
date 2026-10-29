@@ -42,7 +42,7 @@ export default function PublishingDirectory({ sources = [] }) {
   ];
 
   return (
-    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-sm">
+    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] shadow-sm">
       
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-[#334155]">
         <div>
@@ -68,7 +68,7 @@ export default function PublishingDirectory({ sources = [] }) {
           >
             <div>
               <div className="flex items-center justify-between font-mono text-xs mb-2.5">
-                <span className="px-2 py-0.5 bg-slate-100 dark:bg-[#0f172a] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-[#334155] font-bold">
+                <span className="px-2 py-0.5 bg-slate-100 dark:bg-[#070a12] text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-[#1e293b] font-bold">
                   {item.code}
                 </span>
                 <span className="text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">

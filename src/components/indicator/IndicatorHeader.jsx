@@ -11,7 +11,7 @@ export default function IndicatorHeader({ indicator, onOpenJsonFeed, onCiteSerie
   if (!indicator) return null;
 
   return (
-    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] shadow-sm">
+    <div className="terminal-panel p-5 sm:p-6 mb-6 bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] shadow-sm">
       
       {/* Breadcrumb Navigation */}
       <div className="flex items-center gap-1.5 text-xs font-mono text-slate-600 dark:text-slate-400 mb-3">

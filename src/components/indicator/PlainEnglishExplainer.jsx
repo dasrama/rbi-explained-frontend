@@ -62,7 +62,7 @@ export default function PlainEnglishExplainer({ indicator }) {
         </div>
 
         {/* Right 1 Col: Measurable Driver Box */}
-        <div className="p-4 bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] font-mono text-xs flex flex-col justify-between">
+        <div className="p-4 bg-slate-50 dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] font-mono text-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-xs text-emerald-800 dark:text-emerald-400 font-bold uppercase tracking-wider mb-2.5">
               <span className="flex items-center gap-1.5">

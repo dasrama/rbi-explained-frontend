@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Landmark, ExternalLink, CheckCircle2 } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -9,9 +9,9 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 border border-blue-600 dark:border-[#3B82F6 ] bg-blue-50 dark:bg-[#0f172a] flex items-center justify-center text-blue-600 dark:text-[#3B82F6 ]">
-                <ShieldCheck className="w-4 h-4" />
+            <div className="flex items-center gap-2.5">
+              <div className="w-7 h-7 border border-blue-700 dark:border-blue-500 bg-blue-600 dark:bg-blue-600 flex items-center justify-center text-white shadow-xs shrink-0">
+                <Landmark className="w-4 h-4 text-white" />
               </div>
               <span className="font-display font-bold text-slate-900 dark:text-white text-base tracking-wide">
                 RBI INDIA EXPLAINED
@@ -83,7 +83,7 @@ export default function Footer() {
             <h4 className="font-mono text-xs uppercase text-slate-900 dark:text-slate-200 font-bold tracking-wider mb-3">
               DATA INTEGRITY & LEDGER
             </h4>
-            <div className="bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-[#334155] p-3.5 space-y-2 font-mono text-xs shadow-sm">
+            <div className="bg-white dark:bg-[#000000] border border-slate-200 dark:border-[#1e293b] p-3.5 space-y-2 font-mono text-xs shadow-sm">
               <div className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold">
                 <CheckCircle2 className="w-4 h-4" />
                 SHA-256 Ledger Certified
